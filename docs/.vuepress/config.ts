@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { searchProPlugin } from 'vuepress-plugin-search-pro'
+import { revealJsPlugin } from "@vuepress/plugin-revealjs";
 
 export default defineUserConfig({
   base: "/",
@@ -53,6 +54,7 @@ export default defineUserConfig({
       indexContent: true, // 启用正文搜索
       autoSuggestions: true,
     }),
+    revealJsPlugin(),
     
   ],
 
