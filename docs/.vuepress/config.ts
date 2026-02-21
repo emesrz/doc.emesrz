@@ -1,11 +1,11 @@
-import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
+import { searchProPlugin } from 'vuepress-plugin-search-pro'
 
 export default defineUserConfig({
   base: "/",
 
-  head: [
+  /* head: [
     [
       "script",
       {},
@@ -29,7 +29,7 @@ export default defineUserConfig({
         });
       `,
     ],    
-  ],
+  ], */
 
   locales: {
     "/": {
@@ -37,20 +37,25 @@ export default defineUserConfig({
       title: "emsrs'docs",
       description: "emsrs'docs",
     },
-    
+
     "/en/": {
       lang: "en-US",
       title: "emsrs'docs",
       description: "emsrs'docs",
-    },    
+    },
   },
 
   theme,
 
-  plugins: [],
+  plugins: [
+    // ✅ 顶级配置（不是 theme.plugins）
+    searchProPlugin({
+      indexContent: true, // 启用正文搜索
+      autoSuggestions: true,
+    }),
+    
+  ],
 
   // Enable it with pwa
   // shouldPrefetch: false,
-  
-
 });
