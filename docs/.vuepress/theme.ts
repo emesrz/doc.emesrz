@@ -32,7 +32,7 @@ export default hopeTheme({
 
       // footer
       displayFooter: true,
-      copyright: "copyright© <a href=\"https://emsrs.site\" target=\"_blank\">emsrs</a> 2024",
+      copyright: `copyright© <a href=\"https://emsrs.site\" target=\"_blank\">emsrs</a> 2022- ${new Date().getFullYear()}`,
       footer: "<a href=\"/about/\">关于</a>",
 
       // page meta
@@ -51,7 +51,7 @@ export default hopeTheme({
 
       // footer
       displayFooter: true,
-      copyright: "copyright© 2023 <a href=\"https://emsrs.site\" target=\"_blank\">emsrs</a>",
+      copyright: `copyright© <a href=\"https://emsrs.site\" target=\"_blank\">emsrs</a> 2022- ${new Date().getFullYear()}`,
       footer: "<a href=\"/about/\">about</a>",
 
       metaLocales: {
@@ -122,8 +122,12 @@ export default hopeTheme({
 
     // install @vuepress/plugin-revealjs and uncomment these if you need slides
     revealjs: {
-      plugins: ["highlight", "math", "search", "notes", "zoom"],
-    },
+      // 在这里配置 reveal.js 选项
+      // 例如：
+      plugins: ['highlight', 'math', 'notes'],
+      themes: ['black', 'white', 'league', 'beige', 'sky'],
+      // 其他 RevealJS 配置...
+    }
   },
 
   plugins: {
