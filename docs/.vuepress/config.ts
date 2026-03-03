@@ -34,14 +34,12 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "emsrs'docs",
-      description: "emsrs'docs",
+      title: "doc.emesrz",
     },
 
     "/en/": {
       lang: "en-US",
-      title: "emsrs'docs",
-      description: "emsrs'docs",
+      title: "doc.emesrz",
     },
   },
 

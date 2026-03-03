@@ -12,7 +12,7 @@ export const enNavbar = navbar([
   {
     text: "APP",
     icon: "../public/assets/icon/more-app.svg",
-    link: "https://app.emsrs.site",
+    link: "https://emesrz-app.vercel.app/",
   },
   {
     text: "V2 Docs",

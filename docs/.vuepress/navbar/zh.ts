@@ -15,6 +15,12 @@ export const zhNavbar = navbar([
     icon: "book",
     link: "/docs/",
   },
+  // Pictures
+  {
+    text: "Pic",
+    icon: "share-from-square",
+    link: "/under-construction.md",
+  },
   // sitenav
   {
     text: "站点导航",
@@ -25,12 +31,12 @@ export const zhNavbar = navbar([
   {
     text: "博客",
     icon: "link",
-    link: "https://emsrs.site",
+    link: "/under-construction.md",
   },
   // apps
   {
     text: "APP",
     icon: "share-from-square",
-    link: "https://app.emsrs.site",
+    link: "https://emesrz-app.vercel.app/",
   },
 ]);

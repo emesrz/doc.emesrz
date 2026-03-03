@@ -2,7 +2,7 @@
 title: 常用
 order: 1
 ---
- [github](https://github.com/emersers/emsrs.doc)
- [emsrs'app](https://app.emsrs.site/)
+ [github](https://github.com/emesrz/doc.emesrz)
+ [emesrz'app](https://emesrz-app.vercel.app/)
 
 咕咕咕~~~

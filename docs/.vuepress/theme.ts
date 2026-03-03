@@ -3,14 +3,14 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://doc.emsrs.site",
+  hostname: "https://emesrz-doc.vercel.app/",
 
   author: {
-    name: "emsrs",
-    url: "https://emsrs.site",
+    name: "emesrz",
+    url: "https://emesrz.site",
   },
 
-  repo: "emersers/emsrs.doc",
+  repo: "emesrz/doc.emesrz",
 
   docsDir: "docs",
 
@@ -32,7 +32,7 @@ export default hopeTheme({
 
       // footer
       displayFooter: true,
-      copyright: `copyright© <a href=\"https://emsrs.site\" target=\"_blank\">emsrs</a> 2022- ${new Date().getFullYear()}`,
+      copyright: `copyright© <a href=\"https://emesrz.site\" target=\"_blank\">emesrz</a> 2022- ${new Date().getFullYear()}`,
       footer: "<a href=\"/about/\">关于</a>",
 
       // page meta
@@ -51,7 +51,7 @@ export default hopeTheme({
 
       // footer
       displayFooter: true,
-      copyright: `copyright© <a href=\"https://emsrs.site\" target=\"_blank\">emsrs</a> 2022- ${new Date().getFullYear()}`,
+      copyright: `copyright© <a href=\"https://emesrz.site\" target=\"_blank\">emesrz</a> 2022- ${new Date().getFullYear()}`,
       footer: "<a href=\"/about/\">about</a>",
 
       metaLocales: {
@@ -132,7 +132,7 @@ export default hopeTheme({
 
   plugins: {
     /* sitemap: {
-      hostname: "doc.emsrs.site",
+      hostname: "doc.emesrz.site",
       changefreq: "daily",
     }, */
     components: {
@@ -154,7 +154,7 @@ export default hopeTheme({
     }, */
 
     copyright: {
-      author: "emsrs @2026",
+      author: "emesrz @2026",
       license: "MIT",
     },
     copyCode: {
