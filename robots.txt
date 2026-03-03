@@ -1,5 +1,4 @@
-
 User-agent:*
 Disallow:
 
-Sitemap: https://doc.emsrs.site/sitemap.xml
+Sitemap: https://emesrz-doc.vercel.app/sitemap.xml
