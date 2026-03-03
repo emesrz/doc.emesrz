@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://emesrz-doc.vercel.app/doc.emesrz/sitemap.xml
+Sitemap: https://emesrz-doc.vercel.app/sitemap.xml
