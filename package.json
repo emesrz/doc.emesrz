@@ -1,7 +1,7 @@
 {
-  "name": "emsrsdoc",
+  "name": "doc.emesrz",
   "version": "1.0.0",
-  "description": "emsrs'doc",
+  "description": "emesrz's docs",
   "license": "MIT",
   "type": "module",
   "scripts": {
