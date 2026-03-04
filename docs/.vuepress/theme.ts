@@ -3,16 +3,14 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://doc.emsrs.site",
+  hostname: "https://emesrz-doc.vercel.app/",
 
   author: {
-    name: "emsrs",
-    url: "https://emsrs.site",
+    name: "emesrz",
+    url: "https://emesrz.site",
   },
-  // 关键词: "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
-  iconAssets: "fontawesome-with-brands",
-  // iconPrefix: "iconfont icon-",
-  repo: "emersers/emsrs.doc",
+
+  repo: "emesrz/doc.emesrz",
 
   docsDir: "docs",
 
@@ -21,6 +19,7 @@ export default hopeTheme({
     center: ["Links"],
     end: ["Language", "Search", "Repo", "Outlook"],
   },
+  editLink: false,
 
   locales: {
     // Chinese locale config
@@ -33,26 +32,26 @@ export default hopeTheme({
 
       // footer
       displayFooter: true,
-      copyright: "copyright© 2023 <a href=\"https://emsrs.site\" target=\"_blank\">emsrs</a>",
+      copyright: `copyright© <a href=\"https://emesrz.site\" target=\"_blank\">emesrz</a> 2022- ${new Date().getFullYear()}`,
       footer: "<a href=\"/about/\">关于</a>",
-      
+
       // page meta
       metaLocales: {
         editLink: "编辑",
       },
     },
-    
+
     // English locale config
     "/en/": {
       // navbar
       navbar: enNavbar,
-      
+
       // sidebar
       sidebar: enSidebar,
-      
+
       // footer
       displayFooter: true,
-      copyright: "copyright© 2023 <a href=\"https://emsrs.site\" target=\"_blank\">emsrs</a>",
+      copyright: `copyright© <a href=\"https://emesrz.site\" target=\"_blank\">emesrz</a> 2022- ${new Date().getFullYear()}`,
       footer: "<a href=\"/about/\">about</a>",
 
       metaLocales: {
@@ -69,25 +68,98 @@ export default hopeTheme({
     },
   },
 
-  plugins: {
-    sitemap: {
-      hostname: "doc.emsrs.site",
-      changefreq: "daily",
+  markdown: {
+    align: true,
+    attrs: true,
+    codeTabs: true,
+    component: true,
+    demo: true,
+    figure: true,
+    gfm: true,
+    imgLazyload: true,
+    imgSize: true,
+    include: true,
+    mark: true,
+    plantuml: true,
+    spoiler: true,
+    stylize: [
+      {
+        matcher: "Recommended",
+        replacer: ({ tag }) => {
+          if (tag === "em")
+            return {
+              tag: "Badge",
+              attrs: { type: "tip" },
+              content: "Recommended",
+            };
+        },
+      },
+    ],
+    sub: true,
+    sup: true,
+    tabs: true,
+    tasklist: true,
+    vPre: true,
+
+    // uncomment these if you need TeX support
+    math: {
+      // install katex before enabling it
+      type: "katex",
+      // or install @mathjax/src before enabling it
+      // type: "mathjax",
     },
+
+
+    playground: {
+      presets: ["ts", "vue"],
+    },
+
+    // install @vue/repl before enabling it
+    vuePlayground: true,
+
+    // install sandpack-vue3 before enabling it
+    sandpack: true,
+
+    // install @vuepress/plugin-revealjs and uncomment these if you need slides
+    revealjs: {
+      // 在这里配置 reveal.js 选项
+      // 例如：
+      plugins: ['highlight', 'math', 'notes'],
+      themes: ['black', 'white', 'league', 'beige', 'sky'],
+      // 其他 RevealJS 配置...
+    }
+  },
+
+  plugins: {
+    /* sitemap: {
+      hostname: "doc.emesrz.site",
+      changefreq: "daily",
+    }, */
+    components: {
+      // 你想使用的组件
+      components: [
+        "BiliBili",
+      ],
+    },
+      // iconPrefix: "iconfont icon-",
+    icon: {
+      assets: "fontawesome-with-brands",
+    },
+
+    /* shiki: {
+      // ✅ 必须指定主题（推荐 dark-plus）
+      theme: 'dark-plus',
+      // ✅ 可选：指定支持的语言（减少 bundle 大小）
+      langs: ['ts', 'vue', 'md', 'json', 'bash', 'yaml']
+    }, */
+
     copyright: {
-      author: "emsrs @2023",
+      author: "emesrz @2026",
       license: "MIT",
     },
     copyCode: {
       showInMobile: true,
     },
-    components: {
-      // 你想使用的组件
-      components: [
-        "BiliBili",
-        ],
-    },
-    
     // You should generate and use your own comment service
     /* comment: {
       provider: "Giscus",
@@ -98,48 +170,5 @@ export default hopeTheme({
     }, */
 
     // All features are enabled for demo, only preserve features you need here
-    mdEnhance: {
-      align: true,
-      attrs: true,
-      chart: true,
-      codetabs: true,
-      demo: true,
-      echarts: true,
-      figure: true,
-      flowchart: true,
-      gfm: true,
-      imgLazyload: true,
-      imgSize: true,
-      include: true,
-      katex: true,
-      mark: true,
-      mermaid: true,
-      playground: {
-        presets: ["ts", "vue"],
-      },
-      /* revealjs: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-        themes: "auto",
-      }, */
-      revealJs: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tabs: true,
-      vPre: true,
-      vuePlayground: true,
-    },
   },
 });

@@ -5,7 +5,7 @@ title: 支持我
 
 如果你喜欢我的开源项目，并愿意给予支持的话，欢迎通过以下任意方式支持我：
 
-> 点个Star或者分享 [emsrs.doc:rocket:](https://github.com/emersers/emsrs.doc)
+> 点个Star或者分享 [doc.emesrz:rocket:](https://github.com/emesrz/doc.emesrz)
 
 > 留下一个小小的评论或者态度
 

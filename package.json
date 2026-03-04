@@ -1,29 +1,35 @@
 {
-  "name": "emsrsdoc",
-  "version": "2.0.0",
-  "description": "emsrs'doc",
+  "name": "doc.emesrz",
+  "version": "1.0.0",
+  "description": "emesrz's docs",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@8.12.1",
   "scripts": {
-    "docs:build": "vuepress build docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache",
-    "docs:dev": "vuepress dev docs",
-    "docs:update-package": "pnpm dlx vp-update" 
+    "docs:build": "vuepress-vite build docs",
+    "docs:clean-dev": "vuepress-vite dev docs --clean-cache",
+    "docs:dev": "vuepress-vite dev docs",
+    "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vue/repl": "^3.0.0",
-    "@vuepress/client": "2.0.0-rc.0",
-    "chart.js": "^4.4.1",
-    "echarts": "^5.4.3",
-    "flowchart.ts": "^2.0.0",
-    "katex": "^0.16.9",
-    "mermaid": "^10.6.1",
-    "reveal.js": "^5.0.2",
-    "vue": "^3.3.11",
-    "vuepress": "2.0.0-rc.0",
-    "vuepress-plugin-search-pro": "2.0.0-rc.4",
-    "vuepress-plugin-sitemap2": "2.0.0-rc.4",
-    "vuepress-theme-hope": "2.0.0-rc.4"
+    "@vue/repl": "^4.7.1",
+    "@vuepress/bundler-vite": "2.0.0-rc.26",
+    "@vuepress/plugin-revealjs": "2.0.0-rc.47",
+    "@vuepress/plugin-slimsearch": "2.0.0-rc.61",
+    "chart.js": "^4.5.1",
+    "echarts": "^6.0.0",
+    "flowchart.ts": "^3.0.1",
+    "katex": "^0.16.28",
+    "mermaid": "^11.12.3",
+    "sandpack-vue3": "^3.1.12",
+    "sass-embedded": "^1.97.1",
+    "vue": "^3.5.26",
+    "vuepress": "2.0.0-rc.26",
+    "vuepress-plugin-search-pro": "2.0.0-rc.59",
+    "vuepress-theme-hope": "2.0.0-rc.102"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

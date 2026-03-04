@@ -1,14 +1,25 @@
-import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
+import { searchProPlugin } from 'vuepress-plugin-search-pro'
+
+function getBase() {
+  // 检测是否在 GitHub Actions 环境中
+  if (process.env.CI === "true" && process.env.GITHUB_WORKFLOW) {
+    return "/doc.emesrz/";
+  }
+  // 检测 Vercel
+  if (process.env.VERCEL === "1") {
+    return "/";
+  }
+  // 本地开发
+  return "/";
+}
 
 export default defineUserConfig({
-  base: "/",
-
+  base: getBase(),
   head: [
-    // 导入一个外部脚本
-    // ["script", { src: "" }],
-    // // // 添加一段脚本
+    ["base", { href: getBase() }],
+    ["link", { rel: "icon", href: "/favicon.ico" }],
     [
       "script",
       {},
@@ -16,11 +27,18 @@ export default defineUserConfig({
         // 监听页面可见性变化事件
         document.addEventListener("visibilitychange", () => {
           const prefix = "多看一眼就会 | ";
-          const CurrentTitle = document.title;        
+          const CurrentTitle = document.title;
+          let isHidden = false;
           if (document.hidden) {
-            document.title = prefix + document.title;
+            document.title = prefix + CurrentTitle;
+            console.log(document.title);
+            isHidden = true;
           } else {
-            document.title = CurrentTitle.substring(prefix.length);
+            if (CurrentTitle.startsWith(prefix)) {
+              isHidden = false;
+            }
+            if(!isHidden)
+              document.title = CurrentTitle.substring(prefix.length);
           }
         });
       `,
@@ -30,39 +48,26 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "emsrs'docs",
-      description: "emsrs'docs",
+      title: "doc.emesrz",
     },
-    
+
     "/en/": {
       lang: "en-US",
-      title: "emsrs'docs",
-      description: "emsrs'docs",
-    },    
+      title: "doc.emesrz",
+    },
   },
 
   theme,
 
   plugins: [
+    // ✅ 顶级配置（不是 theme.plugins）
     searchProPlugin({
-      // 索引全部内容
-      indexContent: true,
-      // 为分类和标签添加索引
-      customFields: [
-        {
-          getter: (page) => page.frontmatter.category,
-          formatter: "分类：$content",
-        },
-        {
-          getter: (page) => page.frontmatter.tag,
-          formatter: "标签：$content",
-        },
-      ],
+      indexContent: true, // 启用正文搜索
+      autoSuggestions: true,
     }),
+    
   ],
 
   // Enable it with pwa
   // shouldPrefetch: false,
-  
-
 });
