@@ -2,10 +2,24 @@ import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { searchProPlugin } from 'vuepress-plugin-search-pro'
 
-export default defineUserConfig({
-  base: "/",
+function getBase() {
+  // 检测是否在 GitHub Actions 环境中
+  if (process.env.CI === "true" && process.env.GITHUB_WORKFLOW) {
+    return "/doc.emesrz/";
+  }
+  // 检测 Vercel
+  if (process.env.VERCEL === "1") {
+    return "/";
+  }
+  // 本地开发
+  return "/";
+}
 
-  /* head: [
+export default defineUserConfig({
+  base: getBase(),
+  head: [
+    ["base", { href: getBase() }],
+    ["link", { rel: "icon", href: "/favicon.ico" }],
     [
       "script",
       {},
@@ -29,7 +43,7 @@ export default defineUserConfig({
         });
       `,
     ],    
-  ], */
+  ],
 
   locales: {
     "/": {
